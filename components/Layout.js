@@ -96,6 +96,18 @@ export default function Layout({ children }) {
                   <span>Home</span>
                 </Link>
               </li>
+              <li className={router.pathname === '/booking' ? 'bg-gray-900' : ''}>
+                <Link href="/booking" className="flex items-center space-x-2 py-2.5 px-4 hover:bg-gray-900">
+                  <ClipboardDocumentListIcon className="h-6 w-6" />
+                  <span>Bookings</span>
+                </Link>
+              </li>
+              <li className={router.pathname === '/manage-bookings' ? 'bg-gray-900' : ''}>
+                <Link href="/manage-bookings" className="flex items-center space-x-2 py-2.5 px-4 hover:bg-gray-900">
+                  <ClipboardDocumentListIcon className="h-6 w-6" />
+                  <span>Manage Bookings</span>
+                </Link>
+              </li>
               <li className={router.pathname === '/airbnb-entry' ? 'bg-gray-900' : ''}>
                 <Link href="/airbnb-entry" className="flex items-center space-x-2 py-2.5 px-4 hover:bg-gray-900">
                   <PlusCircleIcon className="h-6 w-6" />
