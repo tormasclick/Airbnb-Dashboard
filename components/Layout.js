@@ -40,7 +40,7 @@ export default function Layout({ children }) {
   return (
     <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
       {/* Header */}
-      <header className="bg-gray-800 text-white p-4 fixed top-0 left-0 right-0 z-10 flex items-center">
+      <header className={`bg-gray-800 text-white p-4 fixed top-0 left-0 right-0 z-10 flex items-center ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-800'}`}>
         {/* Desktop Layout */}
         <div className="hidden md:flex w-full items-center">
           <div className="w-1/5 flex items-center">
@@ -50,7 +50,7 @@ export default function Layout({ children }) {
             <input
               type="text"
               placeholder="Search..."
-              className="bg-gray-700 text-white rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className={`bg-gray-700 text-white rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500 ${theme === 'dark' ? 'bg-gray-700' : 'bg-white'}`}
             />
           </div>
           <div className="w-1/5 flex items-center justify-end space-x-4">
@@ -80,12 +80,12 @@ export default function Layout({ children }) {
         <input
           type="text"
           placeholder="Search..."
-          className="bg-gray-700 text-white rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className={`bg-gray-700 text-white rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500 ${theme === 'dark' ? 'bg-gray-700' : 'bg-white'}`}
         />
       </div>
 
       {/* Main Layout */}
-      <div className="flex flex-1 pt-24 md:pt-16">
+      <div className={`flex flex-1 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100'} pt-24 md:pt-16`}>
         {/* Sidebar */}
         <div className={`fixed md:relative bg-gray-800 text-white h-full md:h-auto md:flex md:w-1/5 transition-transform transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
           <nav className="mt-8 w-full">
@@ -162,13 +162,13 @@ export default function Layout({ children }) {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 ml-0 md:ml-1/5 w-full p-4 md:p-8">
+        <div className={`flex-1 ml-0 md:ml-1/5 w-full p-4 md:p-8 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
           {children}
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white p-4 text-center mt-auto">
+      <footer className={`bg-gray-800 text-white p-4 text-center mt-auto ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-800'}`}>
         © 2024 Airbnb Dashboard. All rights reserved.
       </footer>
     </div>
